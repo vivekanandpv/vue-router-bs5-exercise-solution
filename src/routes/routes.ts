@@ -21,6 +21,10 @@ export const router = createRouter({
       component: () => import("../components/About.vue"),
     },
     {
+      path: "/form",
+      component: () => import("../components/Form.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       component: () => import("../components/NotFound.vue"),
     },

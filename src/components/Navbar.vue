@@ -22,6 +22,9 @@
                         <li class="nav-item">
                             <router-link exact-active-class="active" class="nav-link" to="/news">News</router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link exact-active-class="active" class="nav-link" to="/form">Form</router-link>
+                        </li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
