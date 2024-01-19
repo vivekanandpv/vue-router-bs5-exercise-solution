@@ -26,12 +26,29 @@
                             <router-link exact-active-class="active" class="nav-link" to="/form">Form</router-link>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <div class="d-flex align-items-center">
+                        <span class="badge text-bg-secondary me-2">{{
+                            store.language }}</span>
+                        <button type="button" class="btn btn-light" @click="handleLoginToggle">
+                            {{ store.loggedIn ? 'Welcome!' : 'Login' }}
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 </template>
+
+<script setup lang="ts">
+import { appStore } from '../store/app.store';
+
+const store = appStore();
+
+const handleLoginToggle = () => {
+    if (store.loggedIn) {
+        store.logout();
+    } else {
+        store.login();
+    }
+}
+</script>
